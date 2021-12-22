@@ -259,7 +259,7 @@ ${__setProperty(refresh_token, ${refresh_token})};</stringProp>
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <stringProp name="LoopController.loops">10</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">10000</stringProp>
+        <stringProp name="ThreadGroup.num_threads">100</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
@@ -267,6 +267,16 @@ ${__setProperty(refresh_token, ${refresh_token})};</stringProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </ThreadGroup>
       <hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="API Variables" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="server-url" elementType="Argument">
+              <stringProp name="Argument.name">server-url</stringProp>
+              <stringProp name="Argument.value">${__groovy(System.getenv(&quot;SERVER_URL&quot;) ?: &quot;api.topcoder-dev.com&quot;)}</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
         <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Challenge Data" enabled="true"/>
         <hashTree>
           <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSON Challenge Data Set" enabled="true">
@@ -290,16 +300,6 @@ data.entrySet().each {
           </JSR223PostProcessor>
           <hashTree/>
         </hashTree>
-        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="API Variables" enabled="true">
-          <collectionProp name="Arguments.arguments">
-            <elementProp name="server-url" elementType="Argument">
-              <stringProp name="Argument.name">server-url</stringProp>
-              <stringProp name="Argument.value">${__groovy(System.getenv(&quot;SERVER_URL&quot;) ?: &quot;api.topcoder-dev.com&quot;)}</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-          </collectionProp>
-        </Arguments>
-        <hashTree/>
         <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Tests 01" enabled="true"/>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Load Listings (Logout)" enabled="true">
