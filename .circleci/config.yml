@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 parameters:
   run_performancetesting:
     default: false
@@ -115,7 +115,7 @@ jobs:
 
 
 workflows:
-  version: 2
+  version: 2.1
   build:
     when: << pipeline.parameters.run_basedeployment >>
     jobs:
