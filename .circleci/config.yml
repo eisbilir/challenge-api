@@ -70,7 +70,7 @@ workflows:
             branches:
               only:
                 - develop
-                - fix/challenge-timelines-edit-routes
+                - restore-challenge-log
 
       # Production builds are exectuted only on tagged commits to the
       # master branch.
