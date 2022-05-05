@@ -1657,7 +1657,7 @@ data.entrySet().each {
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <stringProp name="LoopController.loops">1</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">30</stringProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
@@ -1700,6 +1700,15 @@ data.entrySet().each {
         </hashTree>
         <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Tests 01" enabled="true"/>
         <hashTree>
+          <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="Constant Throughput Timer" enabled="true">
+            <intProp name="calcMode">4</intProp>
+            <doubleProp>
+              <name>throughput</name>
+              <value>1200.0</value>
+              <savedValue>0.0</savedValue>
+            </doubleProp>
+          </ConstantThroughputTimer>
+          <hashTree/>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Create Challenge" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
