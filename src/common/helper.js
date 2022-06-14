@@ -887,7 +887,7 @@ async function listChallengesByMember (memberId) {
   const token = await getM2MToken()
   let allIds = []
   // get search is paginated, we need to get all pages' data
-  let page = 1
+  let page = 2
   while (true) {
     const result = await axios.get(`${config.RESOURCES_API_URL}/${memberId}/challenges`, {
       headers: { Authorization: `Bearer ${token}` },
