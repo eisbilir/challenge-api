@@ -1089,13 +1089,13 @@ async function createChallenge (currentUser, challenge, userToken) {
   }
 
   // Create in ES
-  await esClient.create({
-    index: config.get('ES.ES_INDEX'),
-    type: config.get('ES.ES_TYPE'),
-    refresh: config.get('ES.ES_REFRESH'),
-    id: ret.id,
-    body: ret
-  })
+  // await esClient.create({
+  //   index: config.get('ES.ES_INDEX'),
+  //   type: config.get('ES.ES_TYPE'),
+  //   refresh: config.get('ES.ES_REFRESH'),
+  //   id: ret.id,
+  //   body: ret
+  // })
 
   // If the challenge is self-service, add the creating user as the "client manager", *not* the manager
   // This is necessary for proper handling of the vanilla embed on the self-service work item dashboard
